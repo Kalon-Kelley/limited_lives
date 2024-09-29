@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:potion",
+      "count": 1,
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:thick",
+          "custom_color": 16660932
+        }
+      }
+    },
+    "title": {
+      "text": "Extra lives? Yeah right"
+    },
+    "description": {
+      "text": "Craft a life potion"
+    }
+  },
+  "parent": "limited_lives:root",
+  "criteria": {
+    "craft_life_potion": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "limited_lives:life_potion"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft_life_potion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

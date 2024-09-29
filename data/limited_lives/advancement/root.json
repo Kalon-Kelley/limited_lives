@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:potion",
+      "count": 1,
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:thick",
+          "custom_color": 16660932
+        }
+      }
+    },
+    "title": {
+      "text": "Limited Lives"
+    },
+    "description": {
+      "text": "Don't die too many times"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "killed_by_something": {
+      "trigger": "minecraft:entity_killed_player"
+    }
+  },
+  "requirements": [
+    [
+      "killed_by_something"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
+

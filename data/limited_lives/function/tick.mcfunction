@@ -26,7 +26,7 @@ scoreboard players reset @a drank_revive_potion
 execute as @a[scores={died=1}] run scoreboard players remove @s lives 1
 scoreboard players reset @a died
 execute as @a[scores={lives=0}] run gamemode spectator @s
-execute as @a[scores={lives=0}] run effect give @s minecraft:blindness infinite 20 true
+execute as @a[scores={lives=0}] run spectate @p[scores={lives=1..}]
 
 # Set default 
 execute as @a unless score @s lives matches -1.. run scoreboard players set @s lives 3
