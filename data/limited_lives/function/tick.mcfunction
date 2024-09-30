@@ -30,3 +30,6 @@ execute as @a[scores={lives=0}] run spectate @p[scores={lives=1..}]
 
 # Set default 
 execute as @a unless score @s lives matches -1.. run scoreboard players set @s lives 3
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:ominous_trial_key"}}] at @s if block ~ ~ ~ minecraft:water_cauldron[level=3] run function limited_lives:brew_life_potion
+execute as @e[type=item,nbt={Item:{id:"minecraft:conduit"}}] at @s if entity @e[type=minecraft:interaction,distance=..0.45,nbt={CustomName:'"life_potion_interaction"'},scores={potion_brew_state=0}] run function limited_lives:life_potion_state_0
