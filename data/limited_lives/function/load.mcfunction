@@ -11,4 +11,4 @@ scoreboard objectives add drank_revive_potion dummy
 scoreboard objectives add potion_brew_state dummy
 
 scoreboard objectives setdisplay sidebar lives
-say Loaded limited_lives!
+say Loaded limited_lives v0.1.0!
