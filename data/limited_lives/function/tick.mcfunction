@@ -35,5 +35,4 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:ominous_trial_key"}}] at @s if 
 execute as @e[type=minecraft:interaction,tag=life_potion_interaction] run function limited_lives:state_machine_life_potion
 execute as @e[type=minecraft:interaction,tag=life_potion_interaction,scores={potion_brew_state=3}] at @s on target if entity @s[nbt={SelectedItem:{id:"minecraft:glass_bottle"}}] run function limited_lives:bottle_life_potion
 
-execute as @e[type=minecraft:interaction,tag=life_potion_interaction] run data remove entity @s interaction
-execute as @e[type=minecraft:interaction,tag=life_potion_interaction] at @s unless block ~ ~1 ~ minecraft:water_cauldron[level=3] run kill @s
+execute as @e[type=minecraft:interaction,tag=life_potion_interaction] at @s run function limited_lives:life_potion_tick
