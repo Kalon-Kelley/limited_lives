@@ -32,7 +32,4 @@ execute as @a[scores={lives=0}] run spectate @p[scores={lives=1..}]
 execute as @a unless score @s lives matches -1.. run scoreboard players set @s lives 3
 
 execute as @e[type=item,nbt={Item:{id:"minecraft:ominous_trial_key"}}] at @s if block ~ ~ ~ minecraft:water_cauldron[level=3] run function limited_lives:brew_life_potion
-execute as @e[type=minecraft:interaction,tag=life_potion_interaction] run function limited_lives:state_machine_life_potion
-execute as @e[type=minecraft:interaction,tag=life_potion_interaction,scores={potion_brew_state=3}] at @s on target if entity @s[nbt={SelectedItem:{id:"minecraft:glass_bottle"}}] run function limited_lives:bottle_life_potion
-
 execute as @e[type=minecraft:interaction,tag=life_potion_interaction] at @s run function limited_lives:life_potion_tick
