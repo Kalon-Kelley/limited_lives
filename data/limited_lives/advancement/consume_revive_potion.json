@@ -19,7 +19,7 @@
     },
     "frame": "challenge"
   },
-  "parent": "limited_lives:craft_revive_potion",
+  "parent": "limited_lives:root",
   "criteria": {
     "revive": {
       "trigger": "minecraft:consume_item",

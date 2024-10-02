@@ -33,3 +33,6 @@ execute as @a unless score @s lives matches -1.. run scoreboard players set @s l
 
 execute as @e[type=item,nbt={Item:{id:"minecraft:ominous_trial_key"}}] at @s if block ~ ~ ~ minecraft:water_cauldron[level=3] run function limited_lives:brew_life_potion
 execute as @e[type=minecraft:interaction,tag=life_potion_interaction] at @s run function limited_lives:life_potion_tick
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:dragon_breath"}}] at @s if block ~ ~ ~ minecraft:water_cauldron[level=3] run function limited_lives:brew_revive_potion
+execute as @e[type=minecraft:interaction,tag=revive_potion_interaction] at @s run function limited_lives:revive_potion_tick

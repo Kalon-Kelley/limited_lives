@@ -19,7 +19,7 @@
     },
     "frame": "challenge"
   },
-  "parent": "limited_lives:craft_life_potion",
+  "parent": "limited_lives:root",
   "criteria": {
     "extra_life": {
       "trigger": "minecraft:consume_item",
