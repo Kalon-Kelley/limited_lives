@@ -36,3 +36,4 @@ execute as @e[type=minecraft:interaction,tag=life_potion_interaction] run functi
 execute as @e[type=minecraft:interaction,tag=life_potion_interaction,scores={potion_brew_state=3}] at @s on target if entity @s[nbt={SelectedItem:{id:"minecraft:glass_bottle"}}] run function limited_lives:bottle_life_potion
 
 execute as @e[type=minecraft:interaction,tag=life_potion_interaction] run data remove entity @s interaction
+execute as @e[type=minecraft:interaction,tag=life_potion_interaction] at @s unless block ~ ~1 ~ minecraft:water_cauldron[level=3] run kill @s
