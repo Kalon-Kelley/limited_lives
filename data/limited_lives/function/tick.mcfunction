@@ -1,30 +1,10 @@
 # Every tick
-# execute as @a at @s run function limited_lives:player_tick
-
-execute as @a if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{life_potion:1}}}}] run scoreboard players set @s holding_life_potion 1
-execute as @a[scores={drank_potion=1,held_life_potion=1}] run scoreboard players set @s drank_life_potion 1
-execute as @a run scoreboard players operation @s held_life_potion = @s holding_life_potion
-scoreboard players reset @a holding_life_potion
-
-execute as @a if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{revive_potion:1}}}}] run scoreboard players set @s holding_revive_potion 1
-execute as @a[scores={drank_potion=1,held_revive_potion=1}] run scoreboard players set @s drank_revive_potion 1
-execute as @a run scoreboard players operation @s held_revive_potion = @s holding_revive_potion
-scoreboard players reset @a holding_revive_potion
-
 execute as @a[scores={drank_potion=1}] at @s run function \
   limited_lives:apply_effect with entity @s
-
 scoreboard players reset @a drank_potion
 
-# If the player drank a revive potion set the nearest players (who's dead) revived to 1
-execute as @a[scores={drank_revive_potion=1}] run scoreboard players set @p[scores={lives=0},limit=1] revived 1
-execute as @a[scores={revived=1}] run gamemode survival @s
-execute as @a[scores={revived=1}] run effect clear @s
-execute as @a[scores={revived=1}] run scoreboard players set @s lives 3
-scoreboard players reset @a revived
-scoreboard players reset @a drank_revive_potion
-
-# If a player dies decrement their lives by 1 and if they get to 0 set them to spectator
+# If a player dies decrement their lives by 1 and if they get to 0 set them to
+# spectator
 execute as @a[scores={died=1}] run scoreboard players remove @s lives 1
 scoreboard players reset @a died
 execute as @a[scores={lives=0}] run gamemode spectator @s

@@ -246,6 +246,67 @@
           "condition": "minecraft:killed_by_player"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "potion_book": 1,
+                  "info": {
+                    "next_ingredient": "minecraft:sponge",
+                    "ingredients": ["minecraft:dragon_head",
+                      "minecraft:nether_star",
+                      "minecraft:echo_shard", "NONE"],
+                    "functions": {
+                      "bottle": "limited_lives:bottling/revive_potion"
+                    }
+                  }
+                },
+                "minecraft:written_book_content": {
+                  "title": "Revive Potion Recipe",
+                  "author": "Witch"
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": -1,
+                "max": 1
+              },
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:killed_by_player"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:enchanted_count_increase",
+              "enchantment": "minecraft:looting",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ]
     }
   ],
   "random_sequence": "minecraft:entities/witch"
