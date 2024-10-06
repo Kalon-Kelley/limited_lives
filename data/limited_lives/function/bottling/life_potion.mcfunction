@@ -8,3 +8,5 @@ give @s minecraft:potion[minecraft:custom_data='{custom_potion:1,\
   minecraft:custom_name='{"text": "Life Elixir", "color": "#FE39C4"}']
 setblock ~ ~ ~ minecraft:cauldron
 kill @e[type=minecraft:interaction,tag=potion_interaction,limit=1,sort=nearest]
+kill @e[type=minecraft:marker,tag=interaction_marker,limit=1,sort=nearest]
+kill @e[type=minecraft:marker,tag=potion_marker,limit=1,sort=nearest]
