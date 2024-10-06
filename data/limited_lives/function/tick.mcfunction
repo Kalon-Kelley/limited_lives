@@ -10,11 +10,11 @@ execute as @a if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data
 execute as @a[scores={drank_potion=1,held_revive_potion=1}] run scoreboard players set @s drank_revive_potion 1
 execute as @a run scoreboard players operation @s held_revive_potion = @s holding_revive_potion
 scoreboard players reset @a holding_revive_potion
-scoreboard players reset @a drank_potion
 
-# If the player drank a life potion increment their lives
-execute as @a[scores={drank_life_potion=1}] run scoreboard players add @s lives 1
-scoreboard players reset @a drank_life_potion
+execute as @a[scores={drank_potion=1}] at @s run function \
+  limited_lives:apply_effect with entity @s
+
+scoreboard players reset @a drank_potion
 
 # If the player drank a revive potion set the nearest players (who's dead) revived to 1
 execute as @a[scores={drank_revive_potion=1}] run scoreboard players set @p[scores={lives=0},limit=1] revived 1
@@ -31,7 +31,8 @@ execute as @a[scores={lives=0}] run gamemode spectator @s
 execute as @a[scores={lives=0}] run spectate @p[scores={lives=1..}]
 
 # Set default 
-execute as @a unless score @s lives matches -1.. run scoreboard players set @s lives 3
+execute as @a unless score @s lives matches -1.. run scoreboard players set @s \
+  lives 3
 
 execute as @e[type=item,nbt={Item:{components:\
   {"minecraft:custom_data":{potion_book:1b}}}}] at @s if block ~ ~ ~ \
@@ -45,5 +46,6 @@ execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s \
   data.functions
 execute as @e[type=minecraft:marker,tag=potion_marker] at @s unless block \
   ~ ~ ~ minecraft:water_cauldron[level=3] run kill @s
-execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s if block \
-  ~ ~ ~ minecraft:cauldron run kill @s
+execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s unless \
+  block ~ ~ ~ minecraft:water_cauldron run kill @s
+execute as @a run function limited_lives:player_storage_store with entity @s
