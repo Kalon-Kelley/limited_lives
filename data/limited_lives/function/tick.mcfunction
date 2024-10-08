@@ -24,8 +24,12 @@ execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s \
   run function limited_lives:bottle_potion_tick with entity \
   @e[type=minecraft:marker,tag=interaction_marker,distance=..0.1,limit=1] \
   data.functions
+
 execute as @e[type=minecraft:marker,tag=potion_marker] at @s unless block \
   ~ ~ ~ minecraft:water_cauldron[level=3] run kill @s
 execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s unless \
   block ~ ~ ~ minecraft:water_cauldron run kill @s
+execute as @e[type=minecraft:marker,tag=interaction_marker] at @s unless \
+  entity @e[type=minecraft:interaction,distance=..0.1,tag=potion_interaction] \
+  run kill @s
 execute as @a run function limited_lives:player_storage_store with entity @s
