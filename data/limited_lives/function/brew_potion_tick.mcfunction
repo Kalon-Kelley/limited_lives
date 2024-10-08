@@ -1,5 +1,9 @@
 execute if entity @s[nbt={data:{info:{next_ingredient:"NONE"}}}] run return \
   run function limited_lives:potion_done with entity @s data.info
+execute unless block ~ ~ ~ minecraft:water_cauldron[level=3] positioned ~ ~1 ~ \
+  run kill @e[type=minecraft:item_display,distance=..0.1]
+execute unless block ~ ~ ~ minecraft:water_cauldron[level=3] run return run \
+  kill @s
 $execute as @e[type=item,nbt={Item:{id:'$(next_ingredient)'}},\
   distance=..0.375,limit=1] run tag @s add ingredient
 $execute positioned ~ ~1 ~ as @e[type=minecraft:item_display,distance=..0.1,\

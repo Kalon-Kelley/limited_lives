@@ -25,8 +25,6 @@ execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s \
   @e[type=minecraft:marker,tag=interaction_marker,distance=..0.1,limit=1] \
   data.functions
 
-execute as @e[type=minecraft:marker,tag=potion_marker] at @s unless block \
-  ~ ~ ~ minecraft:water_cauldron[level=3] run kill @s
 execute as @e[type=minecraft:interaction,tag=potion_interaction] at @s unless \
   block ~ ~ ~ minecraft:water_cauldron run kill @s
 execute as @e[type=minecraft:marker,tag=interaction_marker] at @s unless \
