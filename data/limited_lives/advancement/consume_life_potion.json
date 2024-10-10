@@ -27,7 +27,7 @@
         "item": {
           "items": "minecraft:potion",
           "components": {
-            "minecraft:custom_data": "{life_potion:1}"
+            "minecraft:custom_data": "{custom_potion:1,function:\"limited_lives:drinking/life_potion\"}"
           }
         }
       }
