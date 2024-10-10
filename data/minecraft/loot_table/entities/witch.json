@@ -211,7 +211,10 @@
                 },
                 "minecraft:written_book_content": {
                   "title": "Life Potion Recipe",
-                  "author": "Witch"
+                  "author": "Witch",
+                  "pages": [
+                    "{text:'1 x Ominous Trial Key\\n1 x Conduit\\n1 x Netherite Ingot\\n1 x Golden Apple'}"
+                  ]
                 }
               }
             },
@@ -272,7 +275,10 @@
                 },
                 "minecraft:written_book_content": {
                   "title": "Revive Potion Recipe",
-                  "author": "Witch"
+                  "author": "Witch",
+                  "pages": [
+                    "{text:'1 x Sponge\\n1 x Dragon Head\\n1 x Nether Star\\n1 x Echo Shard'}"
+                  ]
                 }
               }
             },
