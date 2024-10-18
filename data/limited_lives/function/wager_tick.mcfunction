@@ -16,3 +16,4 @@ execute as @a unless score @s wager_participate matches 0..1 if score @s \
   wager_participate
 execute as @a run advancement revoke @s from limited_lives:die_wager_player
 execute as @a run advancement revoke @s from limited_lives:kill_wager_player
+execute as @a[tag=wager_done] run scoreboard players set @s wager_participate 0
