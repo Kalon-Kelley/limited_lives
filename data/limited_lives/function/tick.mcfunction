@@ -31,3 +31,5 @@ execute as @e[type=minecraft:marker,tag=interaction_marker] at @s unless \
   entity @e[type=minecraft:interaction,distance=..0.1,tag=potion_interaction] \
   run kill @s
 execute as @a run function limited_lives:player_storage_store with entity @s
+
+function limited_lives:wager_tick
