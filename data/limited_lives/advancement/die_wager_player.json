@@ -32,6 +32,6 @@
     }
   },
   "rewards": {
-    "function": "limited_lives:wager_die"
+    "function": "limited_lives:wager/die"
   }
 }

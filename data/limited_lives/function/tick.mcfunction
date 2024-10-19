@@ -32,4 +32,4 @@ execute as @e[type=minecraft:marker,tag=interaction_marker] at @s unless \
   run kill @s
 execute as @a run function limited_lives:player_storage_store with entity @s
 
-function limited_lives:wager_tick
+function limited_lives:wager/tick

@@ -3,4 +3,4 @@ tellraw @a ["","A life wager has been started for ",\
   {"score":{"name":"lives","objective":"active_wager"},"bold":true,\
   "color":"yellow"}," lives. To participate type ",\
   {"text":"/trigger wager_participate","bold":true,"color":"yellow"}]
-schedule function limited_lives:reset_wager 600s replace
+schedule function limited_lives:wager/reset 600s replace

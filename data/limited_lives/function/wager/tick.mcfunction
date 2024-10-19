@@ -16,7 +16,7 @@ execute as @a unless score lives active_wager = lives active_wager run \
   scoreboard players reset @s wager_participate
 # If someone triggers an acceptable wager and there isn't an active wager set it
 execute as @a[scores={wager=1..}] unless score lives active_wager matches 1.. \
-  unless score @s wager > @s lives run function limited_lives:set_wager
+  unless score @s wager > @s lives run function limited_lives:wager/set
 # If a player has a wager_participate value != 0 or 1 reset it
 execute as @a unless score @s wager_participate matches 0..1 if score @s \
   wager_participate = @s wager_participate run scoreboard players reset @s \
