@@ -7,9 +7,16 @@ scoreboard objectives add wager trigger
 scoreboard objectives add wager_participate trigger
 scoreboard objectives add active_wager dummy "Active Wager"
 
+# setup for display players
+team add divider
+team modify divider color yellow
+team join divider -----Participants-----
+
 # Set constants for scoreboard operations
 scoreboard objectives add const dummy
 scoreboard players set 1 const 1
 
-scoreboard objectives setdisplay sidebar active_wager
-say Loaded limited_lives v0.2.3!
+# Setdisplay
+scoreboard objectives setdisplay list lives
+
+say Loaded limited_lives v0.2.4!

@@ -26,3 +26,11 @@ execute as @a run advancement revoke @s from limited_lives:die_wager_player
 execute as @a run advancement revoke @s from limited_lives:kill_wager_player
 # Set all players participation status who have completed the wager to 0
 execute as @a[tag=wager_done] run scoreboard players set @s wager_participate 0
+# Display scoreboard functionality
+scoreboard objectives remove wager_display
+execute if score lives active_wager matches 1.. run function \
+  limited_lives:wager/display
+# If there are no participants in the wager reset it early
+execute if score lives active_wager matches 1.. unless entity \
+  @a[scores={wager_participate=1}] run schedule function \
+  limited_lives:wager/reset 1t replace
