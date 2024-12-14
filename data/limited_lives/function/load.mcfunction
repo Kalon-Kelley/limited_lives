@@ -19,4 +19,4 @@ scoreboard players set 1 const 1
 # Setdisplay
 scoreboard objectives setdisplay list lives
 
-say Loaded limited_lives v0.2.4!
+say Loaded limited_lives v0.2.5!
